@@ -1,0 +1,5 @@
+<p>Item Name: <%= i.product.name %> </p>
+<p>Quantity: <%= i.quantity %> </p>
+<p>Cost: <%=Money.us_dollar(i.quantity * i.product.price_cents).format %> </p>
+<p>Item Description: <%= i.product.description %> </p>
+<img src=" <%= i.product.image %> " alt="Product Image" height="100">
