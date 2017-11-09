@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content='text/html; charset=UTF-8' http-equiv='Content-Type' />
+  </head>
+  <body>
+    <h1>Thanks for shopping with Jungle!</h1>
+    <p>Here are your order details.</p>
+    <% @order.line_items.each do |i| %>
+      <%= render '/orders/line_items', i: i %>
+    <% end %>
+    <p>Total: <%= Money.us_dollar(@order.total_cents).format %> </p>
+  </body>
+</html>

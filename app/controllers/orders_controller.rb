@@ -53,6 +53,7 @@ class OrdersController < ApplicationController
       end
     end
     order.save!
+    UserMailer.sample_email(order).deliver_now
     order
   end
 
