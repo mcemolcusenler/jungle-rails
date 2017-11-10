@@ -34,6 +34,14 @@
       <% end %>
     </div>
 
+    <%= form_for @product, url: [@product, :reviews], method: :post do |f| %>
+      <%= f.fields_for :review do |e| %>
+      Your Review: <%= e.text_area :description %>
+      Your Rating: <%= e.select :rating, [1, 2, 3, 4, 5] %>
+      <%= f.submit "Submit" %>
+      <% end %>
+    <% end %>
+
   </article>
 
 </section>
