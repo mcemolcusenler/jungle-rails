@@ -1,4 +1,6 @@
 class ReviewsController < ApplicationController
+  before_action :require_login
+
   def create
     product = Product.find_by(id:
       params[:product_id])
@@ -12,6 +14,21 @@ class ReviewsController < ApplicationController
       redirect_to "/products/#{params[:product_id]}"
     else
       redirect_to "/products/#{params[:product_id]}"
+    end
+  end
+
+  def destroy
+    @review = Review.find(params[:id])
+    @review.destroy
+
+    redirect_to "/products/#{params[:product_id]}"
+  end
+  private
+
+  def require_login
+    unless current_user
+      flash[:error] = "You must be logged in..."
+      redirect_to '/login'
     end
   end
 end

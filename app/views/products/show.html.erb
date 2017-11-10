@@ -28,17 +28,22 @@
 
     <div class="row">
       <dt>Review</dt>
-      <% @product.reviews.each do |i| %>
+      <% @product.reviews.reverse_each do |i| %>
       <dd><%= i.description %></dd>
       <dd><%= i.rating %></dd>
+      <% if current_user.id == i.user_id %>
+        <div><%= button_to('Delete', product_review_path(@product, i), method: :delete) %></div>
+      <% end %>
       <% end %>
     </div>
 
-    <%= form_for @product, url: [@product, :reviews], method: :post do |f| %>
-      <%= f.fields_for :review do |e| %>
-      Your Review: <%= e.text_area :description %>
-      Your Rating: <%= e.select :rating, [1, 2, 3, 4, 5] %>
-      <%= f.submit "Submit" %>
+    <% if current_user %>
+      <%= form_for @product, url: [@product, :reviews], method: :post do |f| %>
+        <%= f.fields_for :review do |e| %>
+        Your Review: <%= e.text_area :description %>
+        Your Rating: <%= e.select :rating, [1, 2, 3, 4, 5] %>
+        <%= f.submit "Submit" %>
+        <% end %>
       <% end %>
     <% end %>
 
