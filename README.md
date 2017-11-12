@@ -29,9 +29,9 @@ More information in their docs: <https://stripe.com/docs/testing#cards>
 
 ## Screenshots
 
-* [Home Page](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Home-Page.png)
-* [Sign Up Page](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/SignUp-Page.png)
-* [Adding an Item to the Cart](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Adding-to-Cart.png)
-* [Placing an Order](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Placing-Order.png)
-* [Submitting a Product Review](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Submitting-Review.png)
-* [Displaying Product Reviews](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Displaying-Review.png)
+* ![Home Page](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Home-Page.png)
+* ![Sign Up Page](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/SignUp-Page.png)
+* ![Adding an Item to the Cart](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Adding-to-Cart.png)
+* ![Placing an Order](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Placing-Order.png)
+* ![Submitting a Product Review](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Submitting-Review.png)
+* ![Displaying Product Reviews](https://github.com/mcemolcusenler/jungle-rails/blob/master/docs/Displaying-Review.png)
