@@ -99,4 +99,42 @@ RSpec.describe User, type: :model do
       expect(@user).to_not be_valid
     end
   end
+
+  describe '.authenticate_with_credentials' do
+    it "should return the user if user is already registered" do
+      @user = User.new(
+        name: "Melimelo",
+        email: "melimelo@example.com",
+        password: "melimelo",
+        password_confirmation: "melimelo"
+      )
+      @user.save!
+      user = User.authenticate_with_credentials(@user.email, @user.password)
+      expect(user).to be_truthy
+    end
+
+    it "should be valid if user email has white-space at the beginnign or end" do
+      @user = User.new(
+        name: "Melimelo",
+        email: "melimelo@example.com",
+        password: "melimelo",
+        password_confirmation: "melimelo"
+      )
+      @user.save!
+      user = User.authenticate_with_credentials(" melimelo@example.com ", @user.password)
+      expect(user).to be_truthy
+    end
+
+    it "should be valid if user email has wrong cap characters" do
+      @user = User.new(
+        name: "Melimelo",
+        email: "melimelo@example.com",
+        password: "melimelo",
+        password_confirmation: "melimelo"
+      )
+      @user.save!
+      user = User.authenticate_with_credentials("melimelo@examPle.cOm", @user.password)
+      expect(user).to be_truthy
+    end
+  end
 end
